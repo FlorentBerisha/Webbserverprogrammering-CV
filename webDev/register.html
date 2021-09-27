@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>MyElectronics</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="css/main.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+   <nav>
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="products.php">Products</a></li>
+            <li><a class="active" href="login.php">Login</a></li>
+            <li><a href="report.php">Report</a></li>
+            
+            
+        </ul>
+    </nav>
+
+    <header class="header">
+        <div>
+            <h1><u>MyElectronics</u></h1>
+            <p>Super cool electronic gadgets</p>
+        </div>
+    </header>
+    <section>
+        <article class="desc">
+            <div class="loginDiv">    
+                <form onsubmit="return Register()" action="Register.php" method="POST">
+                    <div class="container">
+                      <h1>Register</h1>
+                      <p>Please fill in this form to create an account.</p>
+                      <br>  <br>
+                    <label for="Name"><b>Name</b></label>
+                      <input class="form-control" type="name" placeholder="Name" name="Name" id="email" required>
+                      <br>  <br>
+                      <label for="email"><b>Email</b></label>
+                      <input class="form-control" type="email" placeholder="Enter Email" name="email" id="email" required>
+                      <br>  <br>
+                      <label for="psw"><b>Password</b></label>
+                      <input class="form-control" type="password" placeholder="Enter Password" name="psw" id="psw" required>
+                      <br>      <br>             
+                      <label for="psw-repeat"><b>Repeat Password</b></label>
+                      <input class="form-control" type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+                      <br>  <br>
+                   <label for="Contact"><b>Contact</b></label>
+                      <input class="form-control" type="number" placeholder="Contact" name="Contact" id="Contact" required>
+                      <br>  <br>
+
+                       <label for="Address"><b>Address</b></label>
+                      <input class="form-control" type="text" placeholder="Address" name="Address" id="Address" required>
+                      <br>  <br>
+
+                     
+                      <label for="Subscription"><b>Select Subscription Package</b></label>
+                      <br>
+                      <input class="form-control" type="radio"  name="Subscription" id="Monthly" value="3$">
+                      <label for="Subscription"><b>£3 Monthly</b></label>
+                      <input class="form-control" type="radio"  name="Subscription" id="Yearly" value="20$">
+                       <label for="Subscription"><b>£20 Yearly</b></label>
+                   
+                      <br>
+  <br>
+                      <button class="btn btn-primary" type="submit">Register</button>
+                    </div>
+                  </form>
+        </article>
+    </section>
+    <footer>
+    <p>Florent - All rights reserved &copy; 2021 | <a href="index.html">MyElectronics</a></p>
+    </footer>
+
+<script type="text/javascript">
+  function Register()
+{
+
+var password =  document.getElementById('psw').value;
+var psw_repeat = document.getElementById('psw-repeat').value;
+var amount = 0;
+//comparing both the passwords
+if(password === psw_repeat)
+{
+  //if monthly selected 
+  if(document.getElementById('Monthly').checked)
+  {
+
+   amount = document.getElementById('Monthly').value;
+   alert("You Have Successfully Register With 3$ Monthly Subscription Package");
+  return true;
+  }
+  //if yearly selected
+  else if(document.getElementById('Yearly').checked)
+  {
+   amount = document.getElementById('Yearly').value;
+   alert("You Have Successfully Register With 20$ Yearly Subscription Package");
+  return true;
+  }
+
+  else
+  {
+    alert("Please Select A Package");
+  return false;
+  }
+  //form will only be submitted when this function returns true
+
+} 
+else{
+     alert("Password Doesnt Match");
+     return false;
+}
+}
+
+
+</script>
+</body>
+</html>
